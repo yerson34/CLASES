@@ -272,7 +272,24 @@ def mi_max(lista):
      return numero_mayor
 mi_print(mi_max(lista))
 ```
-
-
-
-### FUNCIONES CREADAS 
+## *LAMBDA*
+### *ES UNA FUNCION QUE SE AUTOEJECUTA*
+### *SUMA FUNCION NORMAL*
+```PYTHON
+def suma(a,b):
+    print(a+b)
+suma(4,5)
+hola(19,20)
+```
+### *IF NORMAL*
+```python
+if true:
+    print("soy verdad")
+else:
+    print("no es verdad")
+```
+### IF TERNARIO
+```Python
+ternario="soy verdad ternario"if true else "soy falso ternario"
+print(ternario)
+```

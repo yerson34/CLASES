@@ -30,31 +30,42 @@ def limpiar():
 
 ventana = tk.Tk()
 ventana.title("Calculadora")
-ventana.geometry("300x250")
 
-numero1_label = tk.Label(ventana, text="Primer número:")
-numero1_label.pack(pady=10)
+# Marco para los números
+marco_numeros = tk.Frame(ventana)
+marco_numeros.pack()
 
-numero1_entry = tk.Entry(ventana)
-numero1_entry.pack()
+numero1_label = tk.Label(marco_numeros, text="Primer número:")
+numero1_label.grid(row=0, column=0, padx=10, pady=10)
 
-numero2_label = tk.Label(ventana, text="Segundo número:")
-numero2_label.pack(pady=10)
+numero1_entry = tk.Entry(marco_numeros)
+numero1_entry.grid(row=0, column=1)
 
-numero2_entry = tk.Entry(ventana)
-numero2_entry.pack()
+numero2_label = tk.Label(marco_numeros, text="Segundo número:")
+numero2_label.grid(row=1, column=0, padx=10, pady=10)
 
-boton_sumar = tk.Button(ventana, text="Sumar", command=sumar)
-boton_sumar.pack()
-boton_restar = tk.Button(ventana, text="Restar", command=restar)
-boton_restar.pack()
-boton_multiplicar = tk.Button(ventana, text="Multiplicar", command=multiplicar)
-boton_multiplicar.pack()
-boton_dividir = tk.Button(ventana, text="Dividir", command=dividir)
-boton_dividir.pack()
+numero2_entry = tk.Entry(marco_numeros)
+numero2_entry.grid(row=1, column=1)
 
+# Marco para los botones
+marco_botones = tk.Frame(ventana)
+marco_botones.pack()
+
+boton_sumar = tk.Button(marco_botones, text="+", width=5, command=sumar)
+boton_sumar.grid(row=0, column=0, padx=5, pady=5)
+
+boton_restar = tk.Button(marco_botones, text="-", width=5, command=restar)
+boton_restar.grid(row=0, column=1, padx=5, pady=5)
+
+boton_multiplicar = tk.Button(marco_botones, text="*", width=5, command=multiplicar)
+boton_multiplicar.grid(row=1, column=0, padx=5, pady=5)
+
+boton_dividir = tk.Button(marco_botones, text="/", width=5, command=dividir)
+boton_dividir.grid(row=1, column=1, padx=5, pady=5)
+
+# Botón Limpiar
 boton_limpiar = tk.Button(ventana, text="Limpiar", command=limpiar)
-boton_limpiar.pack()
+boton_limpiar.pack(pady=10)
 
 resultado_var = tk.StringVar()
 resultado_label = tk.Label(ventana, textvariable=resultado_var)
